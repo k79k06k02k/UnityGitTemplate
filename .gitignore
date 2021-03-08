@@ -41,12 +41,11 @@ ehthumbs.db
 *.obb
 *.iap
 *.unity3d
-*.zip
 Builds
 GitLog
-
- 
-
+Assembly-CSharp.patch.bytes
+BuildInfo.properties
+Xcode
 
 
 
