@@ -3,9 +3,11 @@
 const child = require("child_process");
 const fs = require("fs");
 const gitUrl = "http://10.4.0.19:8088/rock10/la/commits/"
+const oldBranch = "origin/Version/V1.0.0\(29\)_210319_R1"
+const newBranch = "origin/Version/V1.0.0\(30\)_210324_R1"
 
 const output = child
-  .execSync(`git log --format=%B%H----DELIMITER---- origin/develop..origin/Art_VFX`)
+  .execSync(`git log --format=%B%H----DELIMITER---- ${oldBranch}..${newBranch}`)
   .toString("utf-8");
 
 const commitsArray = output
