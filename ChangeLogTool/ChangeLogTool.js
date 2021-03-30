@@ -3,17 +3,17 @@
 const child = require("child_process");
 const fs = require("fs");
 const gitUrl = "http://10.4.0.19:8088/rock10/la/commits/"
-const oldBranch = "origin/Version/V1.0.0\(29\)_210319_R1"
-const newBranch = "origin/Version/V1.0.0\(30\)_210324_R1"
+const oldBranch = "origin/Version/V1.0.0\(32\)_210330_R1"
+const newBranch = "origin/Version/V1.0.0\(33\)_210330_R1"
 
 const output = child
-  .execSync(`git log --format=%B%H----DELIMITER---- ${oldBranch}..${newBranch}`)
+  .execSync(`git log --format=%s*#$%H----DELIMITER---- ${oldBranch}..${newBranch}`)
   .toString("utf-8");
 
 const commitsArray = output
   .split("----DELIMITER----\n")
   .map(commit => {
-    const [message, sha] = commit.split("\n");
+    const [message, sha] = commit.split("*#$");
 
     return { sha, message };
   })
