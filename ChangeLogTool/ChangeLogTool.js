@@ -3,8 +3,10 @@
 const child = require("child_process");
 const fs = require("fs");
 const gitUrl = "http://10.4.0.19:8088/rock10/la/commits/"
-const oldBranch = "origin/Version/V1.0.0\(32\)_210330_R1"
-const newBranch = "origin/Version/V1.0.0\(33\)_210330_R1"
+
+const currentVersion = 34
+const oldBranch = "origin/Version/V1.0.0\(33\)_210330_R1"
+const newBranch = "origin/Version/V1.0.0\(34\)_210331_R1"
 
 const output = child
   .execSync(`git log --format=%s*#$%H----DELIMITER---- ${oldBranch}..${newBranch}`)
@@ -20,7 +22,6 @@ const commitsArray = output
   .filter(commit => Boolean(commit.sha));
 
 const currentChangelog = fs.readFileSync("./CHANGELOG.md", "utf-8");
-const currentVersion = Number(require("./package.json").version);
 let newChangelog = `# Version ${currentVersion} (${
   new Date().toISOString().split("T")[0]
 })\n\n`;
