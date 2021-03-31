@@ -21,7 +21,6 @@ const commitsArray = output
   })
   .filter(commit => Boolean(commit.sha));
 
-const currentChangelog = fs.readFileSync("./CHANGELOG.md", "utf-8");
 let newChangelog = `# Version ${currentVersion} (${
   new Date().toISOString().split("T")[0]
 })\n\n`;
@@ -99,4 +98,4 @@ if (refactors.length) {
 }
 
 // prepend the newChangelog to the current one
-fs.writeFileSync("./CHANGELOG.md", `${newChangelog}${currentChangelog}`);
+fs.writeFileSync("./CHANGELOG.md", `${newChangelog}`);
