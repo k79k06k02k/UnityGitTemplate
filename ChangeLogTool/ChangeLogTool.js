@@ -2,11 +2,12 @@
 
 const child = require("child_process");
 const fs = require("fs");
-const gitUrl = "http://10.4.0.19:8088/rock10/la/commits/"
 
-const currentVersion = 34
-const oldBranch = "origin/Version/V1.0.0\(33\)_210330_R1"
-const newBranch = "origin/Version/V1.0.0\(34\)_210331_R1"
+var config = require("./Config.json");
+const gitUrl = config.gitUrl;
+const currentVersion = Number(config.version);
+const oldBranch = config.oldBranch;
+const newBranch = config.newBranch;
 
 const output = child
   .execSync(`git log --format=%s*#$%H----DELIMITER---- ${oldBranch}..${newBranch}`)
