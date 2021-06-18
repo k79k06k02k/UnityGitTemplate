@@ -11,7 +11,7 @@ COMMIT_MSG=`cat $COMMIT_MSG_FILE`
 echo 
 
 
-if [[ "$COMMIT_MSG" =~ ^(fix|feat|perf|doc|style|refactor|chore|test|revert|conflict):[[:space:]]+.*$ ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]branch[[:space:]] ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]remote-tracking[[:space:]]branch ]]; then
+if [[ "$COMMIT_MSG" =~ ^(fix|feat|perf|doc|style|refactor|chore|test|revert|conflict):[[:space:]]+.*$ ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]branch[[:space:]] ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]remote-tracking[[:space:]]branch ]] || [[ "$COMMIT_MSG" =~ ^Revert[[:space:]]"" ]]; then
     echo "格式正確"
 else
 	cat <<EOF
