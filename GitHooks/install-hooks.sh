@@ -3,7 +3,7 @@
 SCRIPT_DIR=$(cd $(dirname $0);pwd)
 DIR=$(dirname $SCRIPT_DIR)
 
-SCRIPTS=(pre-commit post-checkout post-merge prepare-commit-msg)
+SCRIPTS=(post-checkout post-merge prepare-commit-msg)
 
 for SCRIPT in "${SCRIPTS[@]}"; do
 	#echo From:"$SCRIPT_DIR/$SCRIPT"
