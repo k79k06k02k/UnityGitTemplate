@@ -11,6 +11,28 @@ COMMIT_MSG=`cat $COMMIT_MSG_FILE`
 echo 
 
 
+COMMIT_MSG=$(echo "$COMMIT_MSG" | {
+    while IFS= read -r line; do
+
+		if [[ "$line" =~ ^(\#)+.*$ ]]
+		then
+			echo $line
+		else
+
+			if [[ "$line" == "Body" ]]
+			then
+			    echo 
+			else
+			    echo "$line"
+			fi
+
+		fi
+
+    done 
+})
+echo "$COMMIT_MSG" > $COMMIT_MSG_FILE
+
+
 if [[ "$COMMIT_MSG" =~ ^(fix|feat|perf|refactor|chore|doc|style|test):[[:space:]]+.*$ ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]branch[[:space:]] ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]remote-tracking[[:space:]]branch ]] || [[ "$COMMIT_MSG" =~ ^Revert[[:space:]]"" ]]; then
     echo "格式正確"
 else
