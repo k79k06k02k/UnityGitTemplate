@@ -1,0 +1,41 @@
+Type: Subject
+
+Body
+
+
+# Commit Message 請遵造以下格式，並注意冒號後有一個空格
+# 
+# Type: Subject {必要}
+# 
+# Body {非必要}
+# 
+#
+# Type
+# 請遵守下列標籤
+# fix: 修正
+# feat: 新增/修改
+# perf: 效能優化
+# refactor: 已有功能重構
+# chore: 其他雜項內容
+# doc: 文件說明改變
+# style: 程式碼風格改變
+# test: 單元測試與其他測試
+# 
+# Subject
+# 用來簡要描述影響本次變動，概述即可
+# 
+# Body
+# 具體的修改訊息，越詳細越好，如無內容請移除
+# 
+#
+# 範例
+# feat: 戰鬥系統追加進化功能
+#
+# 1. 增加進化道具
+# 2. 戰前介面實作了攜帶道具功能
+# 3. 戰鬥中觸發進化
+#
+#
+# 詳細內容請參閱:
+# https://www.notion.so/Git-56d42ef2c5c84f1a8a08d9371dc258d2#151008e1e3bb4a6ea23eb62d804ccbfa
+#
