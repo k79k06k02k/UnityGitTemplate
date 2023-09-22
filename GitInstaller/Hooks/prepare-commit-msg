@@ -33,7 +33,7 @@ COMMIT_MSG=$(echo "$COMMIT_MSG" | {
 echo "$COMMIT_MSG" > $COMMIT_MSG_FILE
 
 
-if [[ "$COMMIT_MSG" =~ ^(fix|feat|perf|refactor|chore|doc|style|test):[[:space:]]+.*$ ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]branch[[:space:]] ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]remote-tracking[[:space:]]branch ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]commit[[:space:]] ]] || [[ "$COMMIT_MSG" =~ ^Revert[[:space:]]"" ]]; then
+if [[ "$COMMIT_MSG" =~ ^(fix|feat|perf|refactor|chore|style|test):[[:space:]]+.*$ ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]branch[[:space:]] ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]remote-tracking[[:space:]]branch ]] || [[ "$COMMIT_MSG" =~ ^Merge[[:space:]]commit[[:space:]] ]] || [[ "$COMMIT_MSG" =~ ^Revert[[:space:]]"" ]]; then
     echo
 	echo "成功: 格式正確."
 else
