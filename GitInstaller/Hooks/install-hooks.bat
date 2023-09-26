@@ -10,7 +10,7 @@ set list=post-checkout post-merge prepare-commit-msg
      echo From: %CurrentFath%\%%f
 	 echo To: : %ParentPath%.git\hooks\%%f
 	 
-	 copy %CurrentFath%\%%f %ParentPath%.git\hooks\%%f 
+	 copy "%CurrentFath%\%%f" "%ParentPath%.git\hooks\%%f"
 	 echo.
 ))
 
