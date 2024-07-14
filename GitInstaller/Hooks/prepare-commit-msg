@@ -40,9 +40,6 @@ else
 	cat <<EOF
 錯誤: 格式不正確.
 
-詳細說明:
-https://www.notion.so/Git-56d42ef2c5c84f1a8a08d9371dc258d2#151008e1e3bb4a6ea23eb62d804ccbfa
-
 EOF
 	exit 1
 fi
